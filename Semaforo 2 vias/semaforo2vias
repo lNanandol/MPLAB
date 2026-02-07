@@ -1,0 +1,123 @@
+          LIST      P=16F84A
+          ORG       00
+          
+          ;CONFIFIGURACION DE PUERTOS 
+         BSF      03h,5
+         BSF      85h,2
+         CLRF     86h
+         BCF      03h,5
+          
+         ;PROGRAMA PRINCIPLAL
+         CLRF     05h
+         CLRF     06h
+          
+UNO      BTFSS    05h,3
+         GOTO     UNO
+         CERO
+         CLRF     06h
+         MOVLW    41h
+         MOVWF    06h
+         MOVLW    .15
+         CALL     DELAY ;ENCINDE VERDE Y ROJO*
+          
+         CLRF     06h
+         MOVLW    40h
+         MOVWF    06h
+         MOVLW    .3
+         CALL     DELAY ;QUEDA ROJO* ENCENDIDO(PARPADEO)
+         
+         CLRF     06h
+         MOVLW    41h
+         MOVWF    06h
+         MOVLW    .3
+         CALL     DELAY ;ENCINDE VERDE Y ROJO*(PARAPDEO)
+         
+         CLRF     06h
+         MOVLW    40h
+         MOVWF    06h
+         MOVLW    .3
+         CALL     DELAY ;QUEDA ROJO* ENCENDIDO(PARPADEO)
+
+         CLRF     06h
+         MOVLW    41h
+         MOVWF    06h
+         MOVLW    .3
+         CALL     DELAY ;ENCINDE VERDE Y ROJO*(PARAPDEO)
+
+         CLRF     06h
+         MOVLW    40h
+         MOVWF    06h
+         MOVLW    .3
+         CALL     DELAY ;QUEDA ROJO* ENCENDIDO(PARPADEO)
+
+         CLRF     06h
+         MOVLW    42h
+         MOVWF    06h
+         MOVLW    .10
+         CALL     DELAY ;ENCINDE AMARILLO Y ROJO*
+
+         CLRF     06h
+         MOVLW    14h
+         MOVWF    06h
+         MOVLW    .15
+         CALL     DELAY ;ENCIENDE ROJO Y VERDE*
+
+         CLRF     06h
+         MOVLW    04h
+         MOVWF    06h
+         MOVLW    .3
+         CALL     DELAY ;ENCINDE ROJO(PARPEDEO)
+
+         CLRF     06h
+         MOVLW    14h
+         MOVWF    06h
+         MOVLW    .3
+         CALL     DELAY ;ENCINDE ROJO Y VERDE*(PARPADEO)
+
+         CLRF     06h
+         MOVLW    04h
+         MOVWF    06h
+         MOVLW    .3
+         CALL     DELAY ;ENCINDE ROJO(PARPADEO)
+
+         CLRF     06h
+         MOVLW    14h
+         MOVWF    06h
+         MOVLW    .3
+         CALL     DELAY ;ENCINDE ROJO Y VERDE*(PARPADEO)
+
+         CLRF     06h
+         MOVLW    04h
+         MOVWF    06h
+         MOVLW    .3
+         CALL     DELAY ;ENCIENDE ROJO(PARAPDEO)
+
+         CLRF     06h
+         MOVLW    24h
+         MOVWF    06h
+         MOVLW    .10
+         CALL     DELAY ;ENCIENDE ROJO Y AMARILLO*
+         GOTO     CERO
+
+         ;SUBRUTINA DE RETARDO 
+         DELAY      
+         MOVWF    0Ch
+UNO1     MOVLW    0FFh
+         MOVWF    0Dh
+DOS1     MOVLW    0FFh
+         MOVWF    0Eh
+TRES1    DECFSZ   0Eh,1
+         GOTO     TRES1
+         DECFSZ   0Dh,1
+         GOTO     DOS1
+         DECFSZ   0Ch
+         GOTO     UNO1
+         RETURN 
+         END 
+                    
+          
+          
+       
+          
+         
+          
