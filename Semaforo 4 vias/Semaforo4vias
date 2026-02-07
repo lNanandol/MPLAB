@@ -1,0 +1,231 @@
+         LIST      P=16F84A
+         ORG       00
+          
+         ;CONFUGURACION DE PUERTOS 
+         BSF      03h,5
+         CLRF	  85h
+         CLRF     86h
+         BCF      03h,5
+          
+         ;PROGRAMA PRINCIPAL
+         CLRF     05h
+         CLRF     06h
+         
+         CERO
+
+         MOVLW    21h
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .15
+         CALL     DELAY ;ENCINDE VERDE,ENCIENDE ROJO*,ROJO**,ROJO***
+
+         MOVLW    20h
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;APAGA VERDE,ENCIENDE ROJO*,ROJO**,ROJO***
+
+		 MOVLW    21h
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ENCINDE VERDE,ENCIENDE ROJO*,ROJO**,ROJO***
+
+         MOVLW    20h
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;APAGA VERDE, ENCIENDE ROJO*,ROJO**,ROJO***
+
+         MOVLW    21h
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ENCINDE VERDE, ENCIENDE ROJO*,ROJO**,ROJO***
+
+         MOVLW    20h
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;APAGA VERDE,ENCIENDE ROJO*,ROJO**,ROJO***
+
+         MOVLW    22h
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .10
+         CALL     DELAY ;ENCIENDE AMARILLO,ROJO*,ROJO**,ROJO***
+
+         MOVLW    0Ch
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .15
+         CALL     DELAY ;ROJO,ENCIENDE VERDE*,ROJO**,ROJO***
+
+         MOVLW    04h
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,APAGA VERDE*,ROJO**,ROJO***
+
+         MOVLW    0Ch
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ENCIENDE VERDE*,ROJO**,ROJO***
+
+         MOVLW    04h
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,APAGA VERDE*,ROJO**,ROJO***
+
+         MOVLW    0Ch
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ENCIENDE VERDE*,ROJO**,ROJO***
+
+         MOVLW    04h
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,APAGA VERDE*,ROJO**,ROJO***
+
+         MOVLW    14h
+         MOVWF    06h
+         MOVLW    09h
+         MOVWF    05h
+         MOVLW    .10
+         CALL     DELAY ;ROJO,ENCIENDE AMARILLO*,ROJO**,ROJO***
+         
+         MOVLW    64h
+         MOVWF    06h
+         MOVLW    08h
+         MOVWF    05h
+         MOVLW    .15
+         CALL     DELAY ;ROJO,ROJO*,ENCIENDE VERDE**,ROJO***
+
+         MOVLW    24h
+         MOVWF    06h
+         MOVLW    08h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ROJO*,APAGA VERDE**,ROJO***
+
+         MOVLW    64h
+         MOVWF    06h
+         MOVLW    08h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ROJO*,ENCIENDE VERDE**,ROJO***
+
+         MOVLW    24h
+         MOVWF    06h
+         MOVLW    08h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ROJO*,APAGA VERDE**,ROJO***
+
+         MOVLW    64h
+         MOVWF    06h
+         MOVLW    08h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ROJO*,ENCIENDE VERDE**,ROJO***
+
+         MOVLW    24h
+         MOVWF    06h
+         MOVLW    08h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ROJO*,APAGA VERDE**,ROJO***
+
+         MOVLW    0A4h
+         MOVWF    06h
+         MOVLW    08h
+         MOVWF    05h
+         MOVLW    .10
+         CALL     DELAY ;ROJO,ROJO*,ENCIENDE AMARILLO**,ROJO***
+
+         MOVLW    24h
+         MOVWF    06h
+         MOVLW    03h
+         MOVWF    05h
+         MOVLW    .15
+         CALL     DELAY ;ROJO,ROJO*,ROJO**,ENCIENDE VERDE***
+
+         MOVLW    24h
+         MOVWF    06h
+         MOVLW    01h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ROJO*,ROJO**,APAGA VERDE***
+
+         MOVLW    24h
+         MOVWF    06h
+         MOVLW    03h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ROJO*,ROJO**,ENCIENDE VERDE***
+
+         MOVLW    24h
+         MOVWF    06h
+         MOVLW    01h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ROJO*,ROJO**,APAGA VERDE***
+
+         MOVLW    24h
+         MOVWF    06h
+         MOVLW    03h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ROJO*,ROJO**,ENCIENDE VERDE***
+
+         MOVLW    24h
+         MOVWF    06h
+         MOVLW    01h
+         MOVWF    05h
+         MOVLW    .3
+         CALL     DELAY ;ROJO,ROJO*,ROJO**,APAGA VERDE***
+
+         MOVLW    24h
+         MOVWF    06h
+         MOVLW    05h
+         MOVWF    05h
+         MOVLW    .10
+         CALL     DELAY ;ROJO,ROJO*,ROJO**,ENCIENDE AMARILLO***
+
+         GOTO     CERO
+
+         ;SUBRUTINA DE RETARDO 
+         DELAY      
+         MOVWF    0Ch
+UNO1     MOVLW    0FFh
+         MOVWF    0Dh
+DOS1     MOVLW    0FFh
+         MOVWF    0Eh
+TRES1    DECFSZ   0Eh,1
+         GOTO     TRES1
+         DECFSZ   0Dh,1
+         GOTO     DOS1
+         DECFSZ   0Ch
+         GOTO     UNO1
+         RETURN 
+         
+         END 
+          
+        
