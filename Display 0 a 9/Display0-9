@@ -1,0 +1,110 @@
+          LIST       P=16F84A
+          ORG        00
+          
+          ;CONFIGURACION DE PUERTOS
+          BSF        03h,5
+          BSF        85h,2
+          CLRF       86h
+          BCF        03h,5
+          
+          ;PROGRAMA PIRNCIPAL 
+          CLRF       05h
+          CLRF       06h
+          
+          CERO 
+UNO       BTFSS      05h,2
+          GOTO       UNO
+          CLRF       06h
+          MOVLW      3Fh      
+          MOVWF      06h
+          MOVLW      .2
+          CALL       DELAY ;ENCIENDE . CERO  
+          
+DOS       BTFSS      05h,2
+          GOTO       DOS
+          CLRF       06h
+          MOVLW      06h      
+          MOVWF      06h
+          MOVLW      .2
+          CALL       DELAY ;ENCIENDE . UNO
+          
+TRES      BTFSS      05h,2
+          GOTO       TRES
+          CLRF       06h
+          MOVLW      5Bh      
+          MOVWF      06h
+          MOVLW      .2
+          CALL       DELAY ;ENCIENDE . DOS
+           
+CUATRO    BTFSS      05h,2
+          GOTO       CUATRO
+          CLRF       06h
+          MOVLW      4Fh
+          MOVWF      06h
+          MOVLW      .2
+          CALL       DELAY ;ENCIENDE . TRES
+         
+CINCO     BTFSS      05h,2
+          GOTO       CINCO
+          CLRF       06h
+          MOVLW      66h
+          MOVWF      06h
+          MOVLW      .2
+          CALL       DELAY ;ENCIEDE . CUATRO 
+          
+SEIS      BTFSS      05h,2
+          GOTO       SEIS
+          CLRF       06h
+          MOVLW      6Dh
+          MOVWF      06h
+          MOVLW      .2
+          CALL       DELAY ;ENCIENDE . CINCO 
+          
+SIETE     BTFSS      05h,2
+          GOTO       SIETE
+          CLRF       06h
+          MOVLW      7Dh
+          MOVWF      06h
+          MOVLW      .2
+          CALL       DELAY ;ENCIENDE . SEIS 
+          
+OCHO      BTFSS      05h,2
+          GOTO       OCHO
+          CLRF       06h
+          MOVLW      07h
+          MOVWF      06h
+          MOVLW      .2
+          CALL       DELAY ;ENCIENDE . SIETE 
+          
+NUEVE     BTFSS      05h,2
+          GOTO       NUEVE
+          CLRF       06h
+          MOVLW      7Fh
+          MOVWF      06h
+          MOVLW      .2
+          CALL       DELAY ;ENCIENDE . OCHO
+          
+DIEZ      BTFSS      05h,2
+          GOTO       DIEZ
+          CLRF       06h
+          MOVLW      67h
+          MOVWF      06h
+          MOVLW      .2
+          CALL       DELAY ;ENCIENDE . NUEVE
+          GOTO       CERO  
+    
+          ;SUBRUTINA DE RETARDO 
+          DELAY      
+          MOVWF      0Ch
+UNO1      MOVLW      0FFh
+          MOVWF      0Dh
+DOS1      MOVLW      0FFh
+          MOVWF      0Eh
+TRES1     DECFSZ     0Eh,1
+          GOTO       TRES1
+          DECFSZ     0Dh,1
+          GOTO       DOS1
+          DECFSZ     0Ch
+          GOTO       UNO1
+          RETURN 
+          END                
